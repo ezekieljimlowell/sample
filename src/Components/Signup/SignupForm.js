@@ -64,6 +64,9 @@ const SignupForm = () => {
                         <LinkWrapper>
                             <Link to="/">Go to Login</Link>
                         </LinkWrapper>
+                        <LinkWrapper>
+                            <Link to="/dashboard">Dashboard</Link>
+                        </LinkWrapper>
                     </Form>
                 </LoginWrapper>
             </LoginBackground>

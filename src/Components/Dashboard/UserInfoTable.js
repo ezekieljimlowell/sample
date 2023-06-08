@@ -28,19 +28,18 @@ const UserInfoTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        {data?.map(t => <tr key={t.id}>
-                            <td>{t.name}</td>
-                            <td>{t.email}</td>
-                            <td>{t.department}</td>
-                            <td>{t.roles}</td>
-                            <td>{t.skills.map(data => <span key={data}>{data}{" "}</span>)}</td>
-                            <td><Link to="/adduser">Add user</Link></td>
-                            <td><Link to="/adduser">Edit</Link></td>
-                            <td><Button type="button">View</Button></td>
-                            <td><Button type="button">Delete</Button></td>
-                        </tr>)}
-                    </tr>
+                    {data?.map(t => <tr key={t.id}>
+                        <td>{t.name}</td>
+                        <td>{t.age}</td>
+                        <td>{t.email}</td>
+                        <td>{t.department}</td>
+                        <td>{t.roles}</td>
+                        <td>{t.skills.map(data => <span key={data}>{data}{" "}</span>)}</td>
+                        <td><Link to="/adduser">Add user</Link></td>
+                        <td><Link to="/adduser">Edit</Link></td>
+                        <td><Button type="button">View</Button></td>
+                        <td><Button type="button">Delete</Button></td>
+                    </tr>)}
                 </tbody>
             </Table>
         </>
