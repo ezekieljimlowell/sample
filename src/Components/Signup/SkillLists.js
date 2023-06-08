@@ -1,0 +1,6 @@
+export const accountFinanceSkills = ["communication", "leadership", "business", "data analysis", "finance", "budgeting", "digital proficiency", "forecasting", "cash flow management"]
+export const ITSkills = ["HTML", "CSS", "JS", "React", "Angular", "Next JS", "Ruby", "C#", ".net", "Java", "Android", "React native", "python"]
+export const marketingSkills = ["project management", "social media", "email marketing", "content marketing", "digital marketing", "creativity", "strategy", "influencer"]
+export const salesSkills = ["product knowledge", "negotiations", "time management", "active listening", "relationship building", "presentation"]
+export const HRSkills = ["proper recruitment", "employee management", "performance management", "event management"]
+export const operationsSkills = ["process management", "problem solving", "supply chain", "quality management", "technology proficiency", "leadership", "team management"]
