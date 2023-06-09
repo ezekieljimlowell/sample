@@ -3,8 +3,11 @@ import './App.css';
 import LoginForm from './Components/Login/LoginForm';
 import Dashboard from './Components/Dashboard/Dashboard';
 import SignupForm from './Components/Signup/SignupForm';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
+  const loginInfo = useSelector(state => state?.reducer?.userList)
+  console.log(loginInfo);
   return (
     <div className="App">
       <Routes>

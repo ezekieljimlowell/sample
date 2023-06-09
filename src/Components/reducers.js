@@ -1,52 +1,47 @@
-import { actionTypes } from "./actionTypes";
+import * as ACTIONS from "./actions";
 
 const initialState = {
-    profile: {
-        name: '',
-        age: 28,
-        emailId: '',
-        salary: '',
-        profileImage: '',
+    userList: [
+        {
+            name: "ezekeil", age: 24, skills: ["java", "python", "React"],
+            department: "Software solutions", roles: "Admin", email: "ejl@yahoo.com",
+            id: 1, password: '123wer.,', profilePhoto: "",
+        },
+        {
+            name: "daniel", age: 26, skills: ["java", "python", "React"],
+            department: "Software solutions", roles: "Manager", email: "ejl@yahoo.com",
+            id: 2, password: '43dfasP,', profilePhoto: "",
+        }, {
+            name: "vettori", age: 30, skills: ["java", "python", "React"],
+            department: "Software solutions", roles: "Employee", email: "ejl@yahoo.com",
+            id: 3, password: '56fd12Z', profilePhoto: "",
+        }
+    ],
+    loginInfo: {
+        email: "",
+        password: "",
     },
-    formSubmitted: false
+    editInfo: {},
+    signupInfo: {},
 }
 
 const reducer = (state = initialState, action) => {
+    console.log(action.type);
     switch (action.type) {
-        case actionTypes.LOGIN:
-            console.log('login', action.payload.user)
+        case ACTIONS.LOGIN_SUCCESS:
             return {
-                ...state,
-                profile: action.payload.user,
-                formSubmitted: false // after update user formsubmition reset
+                ...state, loginInfo: action.loginInfo
             }
-        case actionTypes.ADD_USER:
+        case ACTIONS.EDIT_USER:
             return {
-                ...state,
-                profile: action.payload.user,
-                formSubmitted: false // after update user formsubmition reset
+                ...state, editInfo: action.editInfo
             }
-        case actionTypes.UPDATE_USER:
+        case ACTIONS.SIGNUP:
             return {
-                ...state,
-                profile: action.payload.user,
-                formSubmitted: false // after update user formsubmition reset
-            }
-        case actionTypes.UPDATE_PROFILE_PICTURE:
-            return {
-                ...state,
-                profile: {
-                    ...state.profile,
-                    profileImage: action.payload.image
-                }
-            }
-        case actionTypes.FORM_SUBMISSION_STATUS:
-            return {
-                ...state,
-                formSubmitted: action.payload.status
+                ...state, signupInfo: action.signupInfo, userList: [...state?.userList, action.signupInfo]
             }
         default:
-            return state;
+            return state
     }
 }
 

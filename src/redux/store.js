@@ -1,10 +1,6 @@
-import { legacy_createStore, combineReducers } from "redux";
+import { legacy_createStore } from "redux";
 import reducer from "../Components/reducers";
 
-const rootReducer = combineReducers({
-    user: reducer
-})
-
-const configureStore = legacy_createStore(rootReducer)
+const configureStore = legacy_createStore(reducer)
 
 export default configureStore;

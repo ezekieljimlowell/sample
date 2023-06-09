@@ -4,7 +4,7 @@ import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Input, LinkWrapper } from "../Login/LoginForm.style";
 import { Select } from "./SignupForm.style";
-import * as Skills from "./SkillLists";
+import * as skills from "./SkillLists";
 import { SelectSkills } from "./SelectSkills";
 //https://medium.com/@jebasuthan/react-user-registration-and-login-using-redux-81ec739e93d1
 
@@ -15,7 +15,9 @@ const SignupForm = () => {
         email: "",
         roles: "",
         department: "",
-        Skills: [],
+        skills: [],
+        password: "",
+        profilePhoto: "",
     });
     const addUserValue = e => {
         console.log(e.target.value);
@@ -38,6 +40,12 @@ const SignupForm = () => {
                             <Input onChange={addUserValue} type="email" name="email" placeholder="email"></Input>
                         </div>
                         <div>
+                            <Input onChange={addUserValue} type="password" name="password" placeholder="password"></Input>
+                        </div>
+                        <div>
+                            <Input type="file" name="profilePhoto" placeholder="profile"></Input>
+                        </div>
+                        <div>
                             <Select onChange={addUserValue} value={userInfo.roles} name="roles">
                                 <option value="">Select Roles</option>
                                 <option value="Admin">Admin</option>
@@ -58,7 +66,7 @@ const SignupForm = () => {
                             </Select>
                         </div>
                         <div>
-                            <SelectSkills Skills={Skills} setUserInfo={setUserInfo} userInfo={userInfo} />
+                            <SelectSkills skills={skills} setUserInfo={setUserInfo} userInfo={userInfo} />
                         </div>
                         <Button type="submit" className='loginButton'>Add User</Button>
                         <LinkWrapper>
