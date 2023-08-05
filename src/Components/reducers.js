@@ -19,7 +19,7 @@ const initialState = {
         {
             name: "vettori", age: 30, skills: ["java", "python", "React"],
             department: "Software solutions", roles: "Employee", email: "ejl@yahoo.com",
-            id: 5, password: '56fd12Z', profilePhoto: "",
+            id: 10, password: '56fd12Z', profilePhoto: "",
         }
     ],
     loginInfo: {
